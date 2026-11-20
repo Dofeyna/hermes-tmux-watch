@@ -11,6 +11,12 @@ waiting for a permission prompt", you get a live list of sessions with real
 color, a status-bar chip summarizing all of them, and a stall warning when
 one hasn't produced new output in 5+ minutes.
 
+![Tmux Watch pane: two hosts, six sessions, one flagged as possibly stuck](docs/pane.png)
+
+The status-bar chip summarises every watched session; here one is flagged:
+
+![Status-bar chip: 1 possibly stuck](docs/chip.png)
+
 ## What it is, concretely
 
 - **A desktop pane + status-bar chip** (`desktop/plugin.js`): lists every
@@ -201,6 +207,9 @@ No restart needed - the backend re-reads the file on every poll.
 
 ## Limitations / non-goals
 
+- "Possibly stuck" means the screen has not changed for 5 minutes. A session
+  that is simply idle (a quiet shell, a log with no new lines) is flagged the
+  same way, since the plugin only looks at the screen.
 - No "send a command into a session" feature (`tmux send-keys`) - this
   plugin watches and can stop a stuck session, it doesn't drive one. If you
   want that, fork it; it's a deliberate scope cut.
