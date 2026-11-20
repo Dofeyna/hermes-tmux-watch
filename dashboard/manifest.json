@@ -1,0 +1,4 @@
+{
+  "name": "tmux-watch",
+  "api": "plugin_api.py"
+}

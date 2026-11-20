@@ -1,0 +1,18 @@
+name: tmux-watch
+version: 0.1.0
+author: Dofeyna
+license: MIT
+homepage: https://github.com/Dofeyna/hermes-tmux-watch
+description: >
+  Read-only Hermes Desktop pane that shows live tmux session state on any
+  number of SSH-reachable hosts - originally built to watch a coding agent
+  (Claude Code, Hermes itself, anything running in a tmux pane) working on a
+  remote dev box without having to SSH in and attach. No command execution is
+  exposed to the UI: the backend only runs "tmux list-sessions" and
+  "tmux capture-pane" over SSH and returns text. See README.md for the
+  full disclosure and the hosts config file format.
+kind: standalone
+requires_hermes: ">=0.21.0"
+provides_tools: []
+provides_hooks: []
+tags: [desktop, monitoring, tmux, ssh, remote-dev]
